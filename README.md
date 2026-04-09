@@ -88,6 +88,7 @@ Add hozzá a `claude_desktop_config.example.json` tartalmát, és írd át az el
 
 ```bash
 npm run inspector
+node build/scripts/testConnection.js
 ```
 
 ---
