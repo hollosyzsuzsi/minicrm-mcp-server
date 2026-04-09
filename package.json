@@ -1,20 +1,25 @@
 {
   "name": "minicrm-mcp-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Local MCP server connecting Claude Desktop to miniCRM REST API",
+  "type": "module",
+  "bin": {
+    "minicrm-mcp-server": "./build/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node build/index.js",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hollosyzsuzsi/minicrm-mcp-server.git"
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "axios": "^1.15.0",
+    "dotenv": "^16.6.1",
+    "zod": "^3.25.76"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hollosyzsuzsi/minicrm-mcp-server/issues"
-  },
-  "homepage": "https://github.com/hollosyzsuzsi/minicrm-mcp-server#readme"
+  "devDependencies": {
+    "@types/node": "^22.19.17",
+    "typescript": "^5.9.3"
+  }
 }
