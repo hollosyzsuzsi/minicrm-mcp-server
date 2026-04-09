@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "minicrm": {
+      "command": "node",
+      "args": ["/TELJES/ELÉRÉSI/ÚT/minicrm-mcp-server/build/index.js"],
+      "env": {
+        "MINICRM_SYSTEM_ID": "system_id",
+        "MINICRM_API_KEY": "api_kulcs",
+        "MINICRM_BASE_URL": "https://r3.minicrm.hu"
+      }
+    }
+  }
+}
