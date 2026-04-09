@@ -127,8 +127,8 @@ export class MiniCRMClient {
         return this.post("/Api/R3/ToDo", data);
     }
 
-    async getToDoList(cardId: number): Promise<ListResponse<ToDo>> {
-        return this.get(`/Api/R3/ToDoList/${cardId}`);
+    async getToDoList(cardId: number, status?: string): Promise<ListResponse<ToDo>> {
+        return this.get(`/Api/R3/ToDoList/${cardId}`, status ? { Status: status } : undefined);
     }
 
     // ── INVOICES ──────────────────────────────────────────────────────────────
