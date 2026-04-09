@@ -1,0 +1,1 @@
+# minicrm-mcp-server
