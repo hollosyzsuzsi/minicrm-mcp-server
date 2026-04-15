@@ -82,6 +82,12 @@ Add hozzá a `claude_desktop_config.example.json` tartalmát, és írd át az el
 
 > Törlési műveletek szándékosan nincsenek implementálva az adatbiztonság érdekében.
 
+> **Megjegyzés a számla lekérdezésről:** A `szamla_lekerdezes` tool kétféleképpen működik:
+> - `InvoiceId` megadásával egy adott számla részletes adatait adja vissza
+> - `InvoiceId` nélkül az összes számlát listázza (max 100, lapozható `Page` paraméterrel)
+> 
+> A miniCRM API nem támogatja a számlák közvetlen szűrését `ProjectId` vagy `ContactId` alapján.
+
 ---
 
 ## Tesztelés

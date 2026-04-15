@@ -124,7 +124,7 @@ export class MiniCRMClient {
     // ── TODOS ─────────────────────────────────────────────────────────────────
 
     async createToDo(data: ToDo): Promise<{ Id: number }> {
-        return this.post("/Api/R3/ToDo", data);
+        return this.put("/Api/R3/ToDo", data);
     }
 
     async getToDoList(cardId: number, status?: string): Promise<ListResponse<ToDo>> {

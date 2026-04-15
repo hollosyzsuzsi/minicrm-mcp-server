@@ -93,7 +93,9 @@ export function registerProjectTools(server: McpServer, client: MiniCRMClient): 
       description:
         "Egy projekt státuszának megváltoztatása. Kizárólag státuszváltásra használható, " +
         "más mező nem módosul. " +
-        "FONTOS: Végrehajtás előtt mindig közöld a felhasználóval melyik projektet és milyen státuszra váltod, és kérj jóváhagyást.",
+        "FONTOS: A StatusId egy szám, nem a státusz neve. " +
+        "Ha nem tudod a StatusId értékét, először futtasd a schema_lekerdezes eszközt. " +
+        "Végrehajtás előtt mindig közöld a felhasználóval melyik projektet és milyen státuszra váltod, és kérj jóváhagyást.",
       inputSchema: {
         Id: z.number().describe("A projekt miniCRM azonosítója"),
         StatusId: z.number().describe("Az új státusz azonosítója"),
