@@ -50,7 +50,6 @@ Nyisd meg a Claude Desktop konfigurációs fájlját:
 
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
 
 Add hozzá a `claude_desktop_config.example.json` tartalmát, és írd át az elérési utat a saját gépednek megfelelően.
 
@@ -81,6 +80,12 @@ Add hozzá a `claude_desktop_config.example.json` tartalmát, és írd át az el
 | `schema_lekerdezes` | Kategóriák, státuszok, egyedi mezők listája |
 
 > Törlési műveletek szándékosan nincsenek implementálva az adatbiztonság érdekében.
+
+> **Megjegyzés a számla lekérdezésről:** A `szamla_lekerdezes` tool kétféleképpen működik:
+> - `InvoiceId` megadásával egy adott számla részletes adatait adja vissza
+> - `InvoiceId` nélkül az összes számlát listázza (max 100, lapozható `Page` paraméterrel)
+> 
+> A miniCRM API nem támogatja a számlák közvetlen szűrését `ProjectId` vagy `ContactId` alapján.
 
 ---
 

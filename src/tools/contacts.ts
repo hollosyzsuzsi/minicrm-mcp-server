@@ -78,13 +78,19 @@ export function registerContactTools(server: McpServer, client: MiniCRMClient): 
         LastName: z.string().optional().describe("Vezetéknév (kötelező, ha FirstName nincs megadva)"),
         Email: z.string().optional().describe("E-mail cím"),
         Phone: z.string().optional().describe("Telefonszám"),
-        Type: z.string().optional().describe("Kontakt típusa (pl. 'Person' vagy 'Company')"),
+        Type: z.string().describe("Kontakt típusa (kötelező, pl. 'Person' vagy 'Company')"),
       },
     },
     async ({ FirstName, LastName, Email, Phone, Type }) => {
       if (!FirstName && !LastName) {
         return {
           content: [{ type: "text", text: "Hiba: FirstName vagy LastName kötelező új kontakt létrehozásához." }],
+          isError: true,
+        };
+      }
+      if (!Type) {
+        return {
+          content: [{ type: "text", text: "Hiba: Type kötelező (pl. 'Person' vagy 'Company')." }],
           isError: true,
         };
       }
