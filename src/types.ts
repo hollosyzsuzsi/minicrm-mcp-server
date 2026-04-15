@@ -11,7 +11,7 @@ export interface Contact {
   Name?: string;
   Email?: string;
   Phone?: string;
-  Type?: string;
+  Type: string;
   [key: string]: unknown;
 }
 
@@ -19,9 +19,9 @@ export interface Project {
   Id?: number;
   Name?: string;
   CategoryId?: number;
-  StatusId?: number;
+  StatusId?: number | string;
   ContactId?: number;
-  UserId?: number;
+  UserId?: number | string;
   [key: string]: unknown;
 }
 
